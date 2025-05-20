@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { FavoritesContext } from "../context/FavoritesContext";
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext.tsx";
 
 export default function NavBar() {
@@ -9,21 +9,21 @@ export default function NavBar() {
     const favorites = useContext(FavoritesContext);
     const { logout, user } = useContext(AuthContext);
 
-    function handleSearch(event) {
+    function handleSearch(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         if (query.trim()) {
             navigate(`/search?q=${query}`);
         }
     }
-    function handleSignup(event) {
+    function handleSignup(event: React.MouseEvent<HTMLButtonElement>) {
         event.preventDefault();
         navigate(`/signup`);
     }
-    function handleLogin(event) {
+    function handleLogin(event: React.MouseEvent<HTMLButtonElement>) {
         event.preventDefault();
         navigate(`/login`);
     }
-    function handleLogout(event) {
+    function handleLogout(event: React.MouseEvent<HTMLButtonElement>) {
         event.preventDefault();
         logout();
         navigate(`/`);

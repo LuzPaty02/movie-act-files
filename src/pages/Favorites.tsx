@@ -1,5 +1,5 @@
 import { FavoritesContext } from "../context/FavoritesContext.tsx";
-import MovieCard from "../components/MovieCard";
+import MovieCard from "../Components/MovieCard";
 import { useContext } from "react";
 
 export default function Favorites() {
